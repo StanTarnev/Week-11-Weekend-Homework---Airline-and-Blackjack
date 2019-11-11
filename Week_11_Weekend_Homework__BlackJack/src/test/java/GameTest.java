@@ -15,9 +15,11 @@ public class GameTest {
     public void before(){
         deck = new Deck();
         dealer = new Dealer();
-        game = new Game(deck, dealer);
         player1 = new Player();
-        player2 = new Player();
+        game = new Game(deck, dealer);
+        game.addPlayer(player1);
+
+
     }
 
     @Test
@@ -33,9 +35,9 @@ public class GameTest {
 
     @Test
     public void gameCanBePlayed(){
-        game.playGame(2);
+        game.playGame();
         assertEquals(48, deck.getNumberOfCards());
         assertEquals(2, dealer.getNumberOfCards());
-        assertEquals(2, player1.getNumberOfCards());
+        assertEquals(2, game.getPlayers().get(0).getNumberOfCards());
     }
 }

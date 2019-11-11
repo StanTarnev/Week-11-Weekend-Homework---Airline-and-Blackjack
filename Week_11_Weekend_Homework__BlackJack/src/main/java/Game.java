@@ -10,9 +10,6 @@ public class Game {
         this.players = new ArrayList<Player>();
         this.deck = deck;
         this.dealer = dealer;
-
-        Player player1 = new Player();
-        this.players.add(player1);
     }
 
     public int getNumberOfPlayers(){
@@ -23,21 +20,21 @@ public class Game {
         this.players.add(player);
     }
 
-    public int playGame(int numberOfCardsDealt){
+    public ArrayList<Player> getPlayers() {
+        return players;
+    }
+
+    public void playGame(){
         Card card1 = deck.cardDealtFromDeck();
         dealer.takeCardFromDeck(card1);
         Card card2 = deck.cardDealtFromDeck();
         dealer.takeCardFromDeck(card2);
         for(Player player : this.players){
-            for (int i = 0; i < numberOfCardsDealt; i++){
-                Card card = deck.cardDealtFromDeck();
-                player.takeCardFromDeck(card);
-            }
+           Card card3 = deck.cardDealtFromDeck();
+           player.takeCardFromDeck(card3);
+           Card card4 = deck.cardDealtFromDeck();
+           player.takeCardFromDeck(card4);
+
         }
-        return numberOfCardsDealt;
-//        Card card3 = deck.cardDealtFromDeck();
-//        player1.takeCardFromDeck(card3);
-//        Card card4 = deck.cardDealtFromDeck();
-//        player1.takeCardFromDeck(card4);
     }
 }

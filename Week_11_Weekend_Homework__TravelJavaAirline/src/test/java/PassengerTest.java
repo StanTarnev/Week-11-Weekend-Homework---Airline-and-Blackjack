@@ -14,9 +14,10 @@ public class PassengerTest {
 
     @Before
     public void before(){
-        passenger = new Passenger("Denpok", 4);
         BOEING747 = new Plane(Model.BOEING747);
         flight = new Flight(BOEING747, "KN234", "LAX", "EDI", "23:05");
+        passenger = new Passenger("Denpok", 4);
+
     }
 
     @Test
@@ -31,6 +32,7 @@ public class PassengerTest {
 
     @Test
     public void canCheckFlight(){
-        assertEquals(flight, passenger.checkFlight());
+        flight.addPassenger(passenger);
+        assertEquals(flight, passenger.getFlight());
     }
 }

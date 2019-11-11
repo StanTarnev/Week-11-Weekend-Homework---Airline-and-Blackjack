@@ -7,7 +7,7 @@ public class Passenger {
     public Passenger(String name, int numberOfBags){
         this.name = name;
         this.numberOfBags = numberOfBags;
-        this.flight = flight;
+        this.flight = null;
     }
 
     public String checkName(){
@@ -18,7 +18,12 @@ public class Passenger {
         return this.numberOfBags;
     }
 
-    public Flight checkFlight(){
-        return this.flight;
+    public Flight getFlight() {
+        return flight;
     }
+
+    public void setFlight(Flight flight) {
+        this.flight = flight;
+    }
+
 }
