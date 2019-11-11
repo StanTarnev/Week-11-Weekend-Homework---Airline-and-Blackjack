@@ -1,6 +1,6 @@
 public enum Model {
 
-    BOEING747(333400, 1 );
+    BOEING747(333400, 416 );
 
     private final int capacity;
     private final int weight;

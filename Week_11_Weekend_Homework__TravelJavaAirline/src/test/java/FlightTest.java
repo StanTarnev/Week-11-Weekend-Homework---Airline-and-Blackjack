@@ -52,12 +52,12 @@ public class FlightTest {
         flight.addPassenger(passenger1);
         assertEquals(1, flight.getNumberOfPassengers());
         flight.addPassenger(passenger2);
-        assertEquals(1, flight.getNumberOfPassengers());
+        assertEquals(2, flight.getNumberOfPassengers());
     }
 
     @Test
     public void canCheckAvailableSeats(){
         flight.addPassenger(passenger1);
-        assertEquals(0, flight.checkAvailableSeats());
+        assertEquals(415, flight.checkAvailableSeats());
     }
 }
